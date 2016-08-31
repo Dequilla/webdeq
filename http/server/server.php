@@ -1,0 +1,8 @@
+<?php
+
+/*
+ * Serves the webpages
+ */
+
+
+

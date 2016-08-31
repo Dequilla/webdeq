@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# If requested file does not exists procceed
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} page/([0-9a-z]+)
+RewriteRule ^page/([0-9a-z]+) index.php?page=$1
+
