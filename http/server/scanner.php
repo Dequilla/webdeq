@@ -1,5 +1,8 @@
 <?php
 
+include_once('utility/classes/formatter.php');
+
+
 /* 
  * Goes through a file and checks for commands and includes
  */
@@ -8,7 +11,7 @@
 class Scanner 
 {
     // The file of which should be scanned
-    private $file;
+    private $file = Array();
     
     // The location of where to load the pages containing un-generated code
     private $pagesLocation = "saved/pages/";
@@ -68,8 +71,11 @@ class Scanner
            } 
         }
         
+        // Format html
+        $content = implode("\n", $this->file);
+        
         // Output the new file to the "generatedLocation"
-        file_put_contents($this->generatedLocation . $filePath, implode("\n", $this->file));
+        file_put_contents($this->generatedLocation . $filePath, $content);
     }
     
     /*
