@@ -1,5 +1,5 @@
-<?php
+<!-- Example template -->
 
-    echo "<h1>Welcome to my website!</h1>"
-
-?>
+<h1>
+   Welcome!
+</h1>

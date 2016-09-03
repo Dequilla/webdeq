@@ -15,8 +15,11 @@ class Scanner
     
     // Location of templates
     private $templateLocation = "saved/templates/";
+
+    // Location of generated files
+    private $generatedLocation = "saved/generated/";
     
-    // "paste" operator
+    // "paste" operator escaped
     private $includeOperator = '\<\+';
     
     // This is still a concept to be worked on
@@ -36,6 +39,7 @@ class Scanner
     
     /*
      * This function does the actual scan and checks for commands and then pastes in what is needed
+     * and eventually saves the generated page in /saved/generated/
      */
     function scan($filePath)
     {
@@ -44,46 +48,28 @@ class Scanner
        
        foreach($this->file as $line_number => $line)
        {
-           /*
-           $length = strlen($line);
-           for($i = 0; $i < $length; $i++)
-           {
-               // TODO: Put in a system that makes sure to ignore comments
-               if($line[$i] == $this->includeOperator[0] && $line[$i+1] == $this->includeOperator[1])
-               {
-                   echo "Found line with include command:" . $line;
-                   
-                   // First remove current line from file array
-                   // For each line in template array_splice($file, $line_number, template_file_array); 
-
-                   // Go through and find the name of the template
-                   for($x = 0; $x < $length; $x++)
-                   {
-                       
-                   }
-                   
-                   
-               }
-               
-               if($line[$i] == $this->commandOperator[0] && $line[$i+1] == $this->commandOperator[1])
-               {
-                   echo "Found line with command:" . $line;
-               }
-
-           }
-           */
-           
-           // Try doing above with regex
-           $pattern = "/(" . $this->includeOperator . "[a-zA-Z0-9]+;)/";
+           // Finds if there are a include on the current line
+           $pattern = "/(" . $this->includeOperator . "[a-zA-Z0-9_-]+;)/";
            $matches = Array();
            preg_match_all($pattern, $line, $matches);
-           echo count($matches[0]);
-           print_r($matches);
-           echo "<br>";
-           
+
            // Create array and store files in them
-           //$includeFiles = file()
-       }
+           for($i = 0; $i < count($matches[0]); $i++)
+           {
+               $filename = $matches[0][$i];
+               $filename = ltrim($filename, "<+");
+               $filename = rtrim($filename, ";");
+               
+               // For the moment it has to have the .php ending
+               $tempFile = file_get_contents($this->templateLocation . $filename . ".php");
+               
+               // Array splice to add the code to the file
+               array_splice($this->file, $line_number, 1, $tempFile);
+           } 
+        }
+        
+        // Output the new file to the "generatedLocation"
+        file_put_contents($this->generatedLocation . $filePath, implode("\n", $this->file));
     }
     
     /*
