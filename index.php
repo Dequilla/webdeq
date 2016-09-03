@@ -9,6 +9,12 @@
         <h1>
         <?php
         
+        require_once('/http/server/scanner.php');
+        
+        $scanner = new Scanner();
+        
+        $scanner->scan('test.php');
+        
         if(isset($_GET['page']))
         {
             $page = $_GET['page'];
