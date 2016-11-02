@@ -5,5 +5,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} ([0-9a-zA-Z\/\.\-]+)
 RewriteRule ^([0-9a-zA-Z\/\.\-]+) index.php [QSA]
-# RewriteRule ^(\?[0-9a-z]+\=\$[0-9a-z]+) &$1
+
 
