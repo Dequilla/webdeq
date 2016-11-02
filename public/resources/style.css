@@ -1,0 +1,92 @@
+ h1.fourofour{
+    font-size: 3em;
+    padding-top: 50px;
+    margin: auto;
+    text-align: center;
+}
+
+h2.fourofour {
+    font-size: 2em;
+    margin: auto;
+    text-align: center;
+}
+
+h3.fourofour {
+    font-size: 1.5em;
+    margin: auto;
+    text-align: center;
+}
+
+nav {
+    margin-top: -200px;
+    margin-bottom: 200px;
+}
+
+li a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: #f2f2f2;
+    font-size: 3em;
+    font-family: Arial, sans-serif;
+    border-radius: 15px;
+    margin: 30px;
+    box-shadow: 0px 0px 22px -1px rgba(0,0,0,0.75);
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: gray;
+}
+
+/* selected link */
+a:active {
+    color: gray;
+}
+
+li {
+    display: inline;
+       
+}
+
+ul {
+    list-style-type: none;
+    width: 60%;
+    margin: auto;
+    text-decoration: none;
+}
+
+img {
+
+}
+
+body {
+    background: white;
+}
+
+footer {
+    margin-top: 700px;
+    width: 100%;
+    height: 200px;
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.75);
+}
+
+footer h3 {
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    width: 30%;
+    margin: auto;
+    padding-top: 100px;
+}
