@@ -1,5 +1,22 @@
 # Webdeq
-This projct is for fun mostly, will be creating a webframework(probably all messedup looking for a professional) for maintaining a website.
+This projct is for fun mostly, will be creating a webframework for maintaining a website.
+
+## Vagrant
+To make development easier I put together a small LEMP enviorment with Ubuntu 16.04 via a vagrant box.
+
+To use this download vagrant via https://www.vagrant.com/downloads.html and install it.
+Create a folder where you want to have your enviorment.
+Download and place http://dequilla.com/resources/vagrant/vagrant-ubuntu16.04-webdeq.box in the folder you just created.
+Open a terminal go to your folder and type: `vagrant box add webdeq-box vagrant-ubuntu16.04-webdeq.box`.
+Next write: `vagrant init webdeq-box` and now you should have a setup enviorment.
+
+To use it just go to the vagrant folder and write `vagrant up` start the vagrant-box.
+
+Browser address to access box webroot: localhost:8080
+The ssh port is usually 2222 but could be diffrent, check `vagrant up` output.
+
+The vagrant box does not come with webdeq by default so just clone the project into the `shared/your-site-name-folder/` folder.
+
 
 ## Licensing
 Do whatever you want but I want my name and a link to my github staying there, and it should be stated if the distributed version is modified by any means.
