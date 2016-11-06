@@ -1,34 +1,27 @@
-<html>
+<!-- HEAD Start of header include -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Your page title here</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- CSS Start of CSS include -->
-<link rel="stylesheet" type="text/css" href="http://dequilla.com/resources/css/reset.css">
-<link rel="stylesheet" type="text/css" href="http://dequilla.com/resources/css/style.css">
-<!-- CSS End of navigation include -->
-    </head>
+    <link rel="icon" type="image/png" href="favicon.png">
 
-    <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="/resources/style.css">
+  </head>
+  <body>
+<!-- HEAD End of header include -->
 
-        <h1 class="fourofour">
-
-            Oh no!
-
-        </h1>
-
-        <h3 class="fourofour">
-
-            The page you requsted is unavailable or does not exist...
-
-        </h3>
+<h1>Error 404, the page you are looking for can not be found.</h1>
 
 <!-- FOOT Start of footer include -->
-<footer>
-    <h3>
-        You are welcome back any day!
-    </h3>
-</footer>
-<!-- FOOT End of footer include -->
-    </body>
 
+    <!-- Here you can for example link all your javascript files -->
+  </body>
 </html>
+<!-- FOOT End of footer include -->

@@ -1,7 +1,6 @@
 <!-- FOOT Start of footer include -->
-<footer>
-    <h3>
-        You are welcome back any day!
-    </h3>
-</footer>
+
+    <!-- Here you can for example link all your javascript files -->
+  </body>
+</html>
 <!-- FOOT End of footer include -->
