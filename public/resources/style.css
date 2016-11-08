@@ -53,7 +53,7 @@ h6 { font-size: 1em;   line-height: 1.45; letter-spacing: -.01rem; }
   margin-bottom: 60px;
   width: auto;
   height: auto;
-  background-image: url('/resources/header.jpg');
+  background-image: url('header.jpg');
   background-position: center center;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
