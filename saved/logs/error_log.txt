@@ -255,3 +255,4 @@ ERROR: 06/11/2016-08:19:31 <> From IP: 192.168.10.1 <> Invalid route requested, 
 ERROR: 06/11/2016-08:19:31 <> From IP: 192.168.10.1 <> Invalid route requested, "/test" is not a valid URL.
 ERROR: 06/11/2016-08:28:41 <> From IP: 192.168.10.1 <> Invalid route requested, "/test" is not a valid URL.
 ERROR: 06/11/2016-08:28:41 <> From IP: 192.168.10.1 <> Invalid route requested, "/test" is not a valid URL.
+ERROR: 08/11/2016-08:55:34 <> From IP: 192.168.10.1 <> Invalid route requested, "/test.txt" is not a valid URL.
