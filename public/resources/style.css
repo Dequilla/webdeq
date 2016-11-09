@@ -26,6 +26,7 @@ pre code {
 
 code {
   padding: 0 4px;
+  white-space: pre-wrap;
 }
 
 pre {

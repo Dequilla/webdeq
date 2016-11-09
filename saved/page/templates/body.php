@@ -62,7 +62,7 @@
       <p>File: <code>saved/page/templates/header.php</code></p>
 <pre><code>&lt;html&gt;
 &lt;head&gt;
-  &lt;title&gt;Page Title&lt;/header&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 </code></pre>
