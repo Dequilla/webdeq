@@ -75,7 +75,7 @@
       <p>Generated file (the file loaded by the browser): <code>saved/page/generated/index.php</code></p>
 <pre><code>&lt;html&gt;
 &lt;head&gt;
-  &lt;title&gt;Page Title&lt;/header&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;h1&gt;Some text&lt;/h1&gt;
