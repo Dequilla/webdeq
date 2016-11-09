@@ -14,6 +14,7 @@ body {
 }
 
 pre, code {
+  padding: 0;
   border: solid 1px #C3C3C3;
   border-radius: 3px;
   background-color: #EEE;
@@ -21,6 +22,14 @@ pre, code {
 
 pre code {
   border: none;
+}
+
+code {
+  padding: 0 4px;
+}
+
+pre {
+  padding: 6px 6px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -80,9 +89,19 @@ strong {
 }
 
 .header-body h1 {
-  font-size: 6em;
+  font-size: 3em;
 }
 
 .header-body h2 {
-  font-size: 2.6em;
+  font-size: 1.6em;
+}
+
+@media (min-width:720px) {
+  .header-body h1 {
+    font-size: 6em;
+  }
+
+  .header-body h2 {
+    font-size: 2.6em;
+  }
 }
