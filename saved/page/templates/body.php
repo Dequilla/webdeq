@@ -88,7 +88,7 @@
         Logging currently takes care of itself, to logg something in your own code use <code>require_once('../http/utility/logger.php');</code> and use one of two functions: <code>deq_log_message</code> or <code>deq_log_error</code> with error string as parameter, it automaticly saves the request IP and what time and date it logged on. The logs are available in <code>saved/logs</code>.
       </p>
 
-      <h3>settings</h3>
+      <h3>Settings</h3>
       <p>
         There are currently a few settings available in <code>http/settings/settings.php</code>.
       </p>
