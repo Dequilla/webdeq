@@ -13,6 +13,16 @@ body {
 	letter-spacing: 0.06em;
 }
 
+pre, code {
+  border: solid 1px #C3C3C3;
+  border-radius: 3px;
+  background-color: #EEE;
+}
+
+pre code {
+  border: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
 	margin-bottom: 1rem;
@@ -25,6 +35,10 @@ h3 { font-size: 1.8em; line-height: 1.3;  letter-spacing: -.1rem;  }
 h4 { font-size: 1.4em; line-height: 1.35; letter-spacing: -.06rem; }
 h5 { font-size: 1.2em; line-height: 1.4;  letter-spacing: -.03rem; }
 h6 { font-size: 1em;   line-height: 1.45; letter-spacing: -.01rem; }
+
+strong {
+  font-weight: 700;
+}
 
 /* Grid */
 .container {
@@ -53,7 +67,7 @@ h6 { font-size: 1em;   line-height: 1.45; letter-spacing: -.01rem; }
   margin-bottom: 60px;
   width: auto;
   height: auto;
-  background-image: url('header.jpg');
+  background-image: url('./header.jpg');
   background-position: center center;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
