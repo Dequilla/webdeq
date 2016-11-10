@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  word-wrap: break-word;
 }
 
 html {
@@ -27,7 +28,6 @@ pre code {
 code {
   padding: 0 4px;
   white-space: pre-wrap;
-  word-wrap: break-word;
 }
 
 pre {
@@ -50,8 +50,6 @@ h6 { font-size: 1em;   line-height: 1.45; letter-spacing: -.01rem; }
 strong {
   font-weight: 700;
 }
-
-a { word-wrap: break-word; }
 
 /* Grid */
 .container {
