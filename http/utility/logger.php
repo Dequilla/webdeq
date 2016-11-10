@@ -1,67 +1,66 @@
 <?php
 
 /*
- * Logging class, errors, useful information, logg it via this 
+ * Logging class, errors, useful information, log it via this
  */
 
 require_once('../http/settings/settings.php');
 require_once('../http/utility/date_time.php');
 
-//TODO -- reconsider redesigning this, alot of duplicate code
-
-// Array or string of error messages
-function deq_log_error($messages)
-{    
-    if($GLOBALS['_DEQ_SETTINGS_']['LOGGING_ENABLED'])
+// What to log then the file(not path)
+// Messages can be an array
+function deq_log($messages, $log_file)
+{
+    if(deq_get_setting('LOGGING_ENABLED'))
     {
-        $log_path = $GLOBALS['_DEQ_SETTINGS_']['LOG_DIR'] . 'error_log.txt';
-            
+        $log_path = deq_get_setting('LOG_DIR') . $log_file;
+
         if(is_string($messages))
         {
-            $actual_message = 'ERROR: ' . get_current_date_as_string() . ' <> From IP: ' . $_SERVER['REMOTE_ADDR'] . ' <> ' . $messages;
-            error_log($actual_message . "\n", 3, $log_path);
+            error_log($messages . "\n", 3, $log_path);
         }
         elseif(is_array($messages))
         {
-           foreach($messages as $message_num => $message)
-           {
-               $actual_message = 'ERROR: ' . get_current_date_as_string() . ' <> From IP: ' . $_SERVER['REMOTE_ADDR'] . ' <> ' . $message;
-               error_log($actual_message . "\n", 3, $log_path);
-           }
+            foreach($messages as $message_num => $message)
+            {
+                // Make sure it is still a string even if it is a
+                if(is_string($message))
+                {
+                    error_log($message . "\n", 3, $log_path);
+                }
+                else
+                {
+                    // Error type sent to log is not string
+                    deq_log_error('Invalid error message type, deq_log only takes strings or arrays of strings.');
+                }
+            }
+
         }
         else
-        { 
-            // Not valid error message type, should be string or array
-            deq_log_error('Invalid type of message sent to logger, logger only takes string and array. ' . gettype($messages) . ' was sent.');
+        {
+            // Error type sent to log is not string
+            deq_log_error('Invalid error message type, deq_log only takes strings or arrays of strings.');
         }
     }
 }
 
+// Array or string of error messages
+function deq_log_error($messages)
+{
+    $log_file = 'error_log.txt';
+
+    $actual_message = 'ERROR: ' . get_current_date_as_string() . ' <> From IP: ' . $_SERVER['REMOTE_ADDR'] . ' <> ' . $messages;
+
+    deq_log($actual_message, $log_file);
+}
+
 function deq_log_message($messages)
 {
-    if($GLOBALS['_DEQ_SETTINGS_']['LOGGING_ENABLED'])
-    {
-        $log_path = $GLOBALS['_DEQ_SETTINGS_']['LOG_DIR'] . 'message_log.txt';
-     
-        if(is_string($messages))
-        {
-            $actual_message = 'MESSAGE: ' . get_current_date_as_string() . ' <> From IP: ' . $_SERVER['REMOTE_ADDR'] . ' <> ' . $messages;
-            error_log($actual_message . "\n", 3, $log_path);
-        }
-        elseif(is_array($messages))
-        {
-           foreach($messages as $message_num => $message)
-           {
-                $actual_message = 'MESSAGE: ' . get_current_date_as_string() . ' <> From IP: ' . $_SERVER['REMOTE_ADDR'] . ' <> ' . $message;
-                error_log($actual_message . "\n", 3, $log_path);
-           }
-        }
-        else
-        { 
-            // Not valid error message type, should be string or array
-            deq_log_error('Invalid type of message sent to logger, logger only takes strings and arrays. ' . gettype($messages) . ' was sent.');
-        }
-    }
+    $log_file = 'message_log.txt';
+
+    $actual_message = 'MESSAGE: ' . get_current_date_as_string() . ' <> From IP: ' . $_SERVER['REMOTE_ADDR'] . ' <> ' . $messages;
+
+    deq_log($actual_message, $log_file);
 }
 
 ?>
