@@ -7,10 +7,15 @@ Do whatever you want but I want my name and a link to my github staying there, a
 Edwin Wallin.  
 Github: [https://github.com/Dequilla](https://github.com/Dequilla)  
 Website: [http://dequilla.com](http://dequilla.com) or [http://edwinwallin.com](http://edwinwallin.com)  
-Email: [edwin.wallin@dequilla.com](mailto:edwin.wallin@dequilla.com)
+Email: [edwin.wallin@dequilla.com](edwin.wallin@dequilla.com)  
+
+Pontus Nilsson.  
+Github: [https://github.com/tazthemaniac](https://github.com/tazthemaniac)  
+Website: [http://pontusnilsson.com](http://pontusnilsson.com) or [http://tazthemaniac.com](http://tazthemaniac.com)  
+Email: [pontus_nilsson_92@hotmail.com](pontus_nilsson_92@hotmail.com)
 
 ## Installing
-**Requires a PHP enabled server**  
+**Requires a PHP enabled server (only tested on PHP7 and nginx server)**  
 Clone or download the project and set your servers webroot to webdeqs public folder (or symlink to it) and it should work.  
 [Download](https://github.com/Dequilla/webdeq/releases)  
 [Clone](https://github.com/Dequilla/webdeq)
@@ -20,7 +25,7 @@ Clone or download the project and set your servers webroot to webdeqs public fol
 In `saved/page/pages/routes.php` you can set your urls, example: `'/home' => 'home.php'`.  
 The files you reference to (in this case, `home.php`) in your urls, shuld be located in (or in a subdirectory of) the `saved/page/pages` directory.
 
-### pages
+### Pages
 The `saved/page/pages` directory contain the files you reference to in your `routes.php` file. they contain the code that the web browser will read. These files can also contain links to template files.
 
 ### Templates
@@ -68,23 +73,7 @@ The logs are available in `saved/logs`.
 ### Settings
 There are currently a few settings available in `http/settings/settings.php`.
 
-`CACHING_ENABLED`: Currently useless. Will be used to set wether to always generate new pages or if it saves generated pages.
-`LOGGING_ENABLED`: set to true to log, false to not log.
+`CACHING_ENABLED`: Sets wether to always generate new pages or if it saves generated pages.
+`LOGGING_ENABLED`: Set to true to log, false to not log.
 `LOG_DIR`: The directory which the logger saves the logs to.
 `DEFAULT_TIMEZONE`: Sets what timezone you want the system to operate from.
-
-## Vagrant (_Experimental, you will have bugs_)
-To make development easier, I have put together a lightweight vagrant box with Ubuntu 16.04 server and a LEMP stack.
-
-To use this download vagrant via [https://www.vagrant.com/downloads.html](https://www.vagrant.com/downloads.html) and install it.
-Create a folder where you want to have your enviorment.
-Download and place [http://dequilla.com/resources/vagrant/vagrant-ubuntu16.04-webdeq.box](http://dequilla.com/resources/vagrant/vagrant-ubuntu16.04-webdeq.box) in the folder you just created.
-Open a terminal and go to your folder and type: `vagrant box add webdeq-box vagrant-ubuntu16.04-webdeq.box`.
-Next write: `vagrant init webdeq-box` and now you should have a setup enviorment.
-
-To use it just go to the vagrant folder and write `vagrant up` to start the vagrant-box.
-
-Browser address to access the box webroot: localhost:8080
-The ssh port is usually 2222 but could be different, check `vagrant up` output.
-
-The vagrant box does not come with webdeq by default so just clone the project into the `shared/your-site-name-folder/` folder.
