@@ -50,6 +50,8 @@ strong {
   font-weight: 700;
 }
 
+a { word-wrap: break-word; }
+
 /* Grid */
 .container {
   margin-left: auto;
