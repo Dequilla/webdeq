@@ -15,18 +15,24 @@
 
       <h2>Licensing</h2>
       <p>
-        Do whatever you want but I want my name and a link to my github staying there, and it should be stated if the distributed version is modified by any means.
+        Do whatever you want but we want our names, links to github and mails staying there, and it should be stated if the distributed version is modified by any means.
       </p>
       <p>
-        Edwin whalin<br />
+        Edwin Wallin<br />
         Github: <a href="https://github.com/Dequilla">https://github.com/Dequilla</a><br />
         Website: <a href="http://dequilla.com">http://dequilla.com</a> or <a href="http://dequilla.com">http://edwinwallin.com</a><br />
         Email: <a href="mailto:edwin.wallin@dequilla.com">edwin.wallin@dequilla.com</a>
       </p>
+      <p>
+        Pontus Nilson<br />
+        Github: <a href="https://github.com/tazthemaniac">https://github.com/tazthemaniac</a><br />
+        Website: <a href="http://pontusnilsson.com">http://pontusnilsson.com</a> or <a href="http://tazthemaniac.com">http://tazthemaniac.com</a><br />
+        Email: <a href="mailto:pontus_nilsson_92@hotmail.com">pontus_nilsson_92@hotmail.com</a>
+      </p>
 
       <h2>Installing</h2>
       <p>
-        <strong>Requires a PHP enabled server</strong><br />
+        <strong>Requires a PHP enabled server (only tested on PHP7 and nginx server)</strong><br />
         Clone or download the project and set your servers webroot to webdeqs public folder (or symlink to it) and it should work.<br />
         <a href="https://github.com/Dequilla/webdeq/releases">Download</a><br />
         <a href="https://github.com/Dequilla/webdeq">Clone</a>
@@ -39,7 +45,7 @@
         The files you reference to (in this case, <code>home.php</code>) in your urls, shuld be located in (or in a subdirectory of) the <code>saved/page/pages</code> directory.
       </p>
 
-      <h3>pages</h3>
+      <h3>Pages</h3>
       <p>
         The <code>saved/page/pages</code> directory contain the files you reference to in your <code>routes.php</code> file. they contain the code that the web browser will read. These files can also contain links to template files.
       </p>
@@ -93,24 +99,10 @@
         There are currently a few settings available in <code>http/settings/settings.php</code>.
       </p>
       <p>
-        <code>CACHING_ENABLED</code>: Currently useless. Will be used to set wether to always generate new pages or if it saves generated pages. <code>LOGGING_ENABLED</code>: set to true to log, false to not log. <code>LOG_DIR</code>: The directory which the logger saves the logs to. <code>DEFAULT_TIMEZONE</code>: Sets what timezone you want the system to operate from.
-      </p>
-
-      <h2>Vagrant (Experimental, you will have bugs)</h2>
-      <p>
-        To make development easier, I have put together a lightweight vagrant box with Ubuntu 16.04 server and a LEMP stack.
-      </p>
-      <p>
-        To use this download vagrant via <a href="https://www.vagrant.com/downloads.html"> https://www.vagrant.com/downloads.html</a> and install it. Create a folder where you want to have your enviorment. Download and place <a href="http://dequilla.com/resources/vagrant/vagrant-ubuntu16.04-webdeq.box"> http://dequilla.com/resources/vagrant/vagrant-ubuntu16.04-webdeq.box</a> in the folder you just created. Open a terminal and go to your folder and type: <code>vagrant box add webdeq-box vagrant-ubuntu16.04-webdeq.box</code>. Next write: <code>vagrant init webdeq-box</code> and now you should have a setup enviorment.
-      </p>
-      <p>
-        To use it just go to the vagrant folder and write <code>vagrant</code> up to start the vagrant-box.
-      </p>
-      <p>
-        Browser address to access the box webroot: localhost:8080 The ssh port is usually 2222 but could be different, check <code>vagrant</code> up output.
-      </p>
-      <p>
-        The vagrant box does not come with webdeq by default so just clone the project into the <code>shared/your-site-name-folder/</code> folder.
+        <code>CACHING_ENABLED</code>: Sets wether to always generate new pages or if it saves generated pages.<br />
+        <code>LOGGING_ENABLED</code>: Set to true to log, false to not log.<br />
+        <code>LOG_DIR</code>: The directory which the logger saves the logs to.<br />
+        <code>DEFAULT_TIMEZONE</code>: Sets what timezone you want the system to operate from.
       </p>
     </div>
   </div>
