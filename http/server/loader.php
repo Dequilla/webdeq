@@ -18,41 +18,40 @@ class Loader
         $caching = deq_get_setting('CACHING_ENABLED');
         $content = '';
 
-
-        // If caching is enabled try just loading the generated file
-        if($caching)
+        // Before loading and generating the files
+        // Check if caching is enabled and if it is not
+        // Remove it to not clash
+        if(!$caching)
         {
-            // If there is a generated file, pass the generation stage
-            if(!file_exists($generated_location . $file_name))
-            {
-                // If no generated page exists generate one and serve it
-                // Make sure there is actually a page name $file_name
-                if(file_exists($pages_location . $file_name))
-                {
-                    scanner::scan($file_name);
-                }
-            }
-
-            // Now present / include the generated page
-            include($generated_location . $file_name);
-        }
-        else // Caching is disabled load don't save generated pages
-        {
-            // Delete the generated file because we really don't want them hanging around if
-            // We have caching disabled
             if(file_exists($generated_location . $file_name))
             {
                 // Unlink deletes the file
                 unlink($generated_location . $file_name);
             }
+        }
 
+        // If there is a generated file, pass the generation stage
+        if(!file_exists($generated_location . $file_name))
+        {
+            // If no generated page exists generate one and serve it
+            // Make sure there is actually a page name $file_name
             if(file_exists($pages_location . $file_name))
             {
-                $content = scanner::scan($file_name);
+                scanner::scan($file_name);
             }
+        }
 
+        // Now present / include the generated page
+        include($generated_location . $file_name);
 
-            echo $content;
+        // Delete the generated file if caching is disabled
+        if(!$caching)
+        {
+            if(file_exists($generated_location . $file_name))
+            {
+                // Unlink deletes the file
+                unlink($generated_location . $file_name);
+            }
         }
     }
 }

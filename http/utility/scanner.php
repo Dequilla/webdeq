@@ -48,15 +48,9 @@ class Scanner
         $content = implode("\n", $file);
 
         // If caching is enabled write to file else return the content
-        if(deq_get_setting('CACHING_ENABLED'))
-        {
-            // Output the new file to the '$generated_location'
-            file_put_contents($generated_location . $file_path, $content);
-        }
-        else
-        {
-            return $content;
-        }
+
+        // Output the new file to the '$generated_location'
+        file_put_contents($generated_location . $file_path, $content);
 
     }
 }

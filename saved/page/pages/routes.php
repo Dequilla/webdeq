@@ -7,7 +7,8 @@
 
 $_DEQ_ROUTES_ = [
 //  Route           File
-    '/'          => 'index.php',
+    '/'             => 'index.php',
+    '/php-example'	=> 'php-example.php'
 ];
 
 function deq_get_route($route_uri)
