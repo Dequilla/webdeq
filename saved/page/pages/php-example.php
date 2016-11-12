@@ -1,5 +1,9 @@
-<+header;
+<+header();
 
-<+php-example;
+<+php-example();
 
-<+footer;
+<h3>
+    <+deq-var(test="This text was specified with a deqvar");
+</h3>
+
+<+footer();

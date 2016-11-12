@@ -1,8 +1,8 @@
 <!-- Linking to the header temaplate will include everything in that file -->
-<+header;
+<+header();
 
 <!-- Linking to the body temaplate will include everything in that file -->
-<+body;
+<+body();
 
 <!-- And last but not least, linking to the header temaplate will include everything in that file -->
-<+footer;
+<+footer();

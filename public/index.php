@@ -14,6 +14,9 @@
     require_once('../http/utility/logger.php');
     require_once('../http/server/server.php');
 
+    // TODO: Improve
+    ini_set('display_errors', (bool)deq_get_setting('SHOW_BACKEND_ERRORS'));
+
     $page = server::get_current_uri();
     server::load_page($page);
 
