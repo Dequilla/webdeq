@@ -43,13 +43,14 @@ The `saved/page/pages` directory contain the files you reference to in your `rou
 Templates are stored in the `saved/page/templates` directory, they are files that can be included in your pages.  
 
 #### Example
-In the file `saved/page/pages/index.php` you can include the files `saved/page/templates/header.php` and `saved/page/templates/footer.php` by typing `<+header;` and `<+footer;` without the .php extention.
+In the file `saved/page/pages/index.php` you can include the files `saved/page/templates/header.php` and `saved/page/templates/footer.php` by typing `<+header();` and `<+footer();` without the .php extention.
+**(Do not forget the <+ nore the (); or it wont work )**
 
 File: `saved/page/pages/index.php`
 ```
-<+header;
+<+header();
   <h1>Some text</h1>
-<+footer;
+<+footer();
 ```
 File: `saved/page/templates/header.php`
 ```
@@ -84,7 +85,11 @@ The logs are available in `saved/logs`.
 ### Settings
 There are currently a few settings available in `http/settings/settings.php`.
 
-`CACHING_ENABLED`: Sets wether to always generate new pages or if it saves generated pages.
+`CACHING_ENABLED`: Sets wether to always generate new pages or if it saves generated pages **(Take note that if you set this to true it wont currently know wether you have to regenerate the page after changes so you'll have to manually delete the old page if you update it)** .
+
 `LOGGING_ENABLED`: Set to true to log, false to not log.
+
 `LOG_DIR`: The directory which the logger saves the logs to.
+
 `DEFAULT_TIMEZONE`: Sets what timezone you want the system to operate from.
+
