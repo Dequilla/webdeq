@@ -16,9 +16,20 @@ Email: [pontus_nilsson_92@hotmail.com](pontus_nilsson_92@hotmail.com)
 
 ## Installing
 **Requires a PHP enabled server (only tested on PHP7 and nginx server)**  
-Clone or download the project and set your servers webroot to webdeqs public folder (or symlink to it) and it should work.  
+Clone or download the project and set your servers webroot to webdeqs public folder (or symlink to it) and it should work.
 [Download](https://github.com/Dequilla/webdeq/releases)  
 [Clone](https://github.com/Dequilla/webdeq)
+
+### Apache - Nginx
+If you are using Apache there is a htaccess file included, however if you are using nginx you will need this in your sites file:
+```
+# nginx configuration
+location / {
+  if (!-e $request_filename){
+    rewrite ^/([0-9a-zA-Z\/\.\-]+) /index.php;
+  }
+}
+```
 
 ## Usage
 ### Routes
