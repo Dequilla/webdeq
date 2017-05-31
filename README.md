@@ -44,7 +44,7 @@ Templates are stored in the `saved/page/templates` directory, they are files tha
 
 #### Example
 In the file `saved/page/pages/index.php` you can include the files `saved/page/templates/header.php` and `saved/page/templates/footer.php` by typing `<+header();` and `<+footer();` without the .php extention.
-**(Do not forget the <+ nore the (); or it wont work )**
+**(Do not forget the <+ note the (); or it wont work )**
 
 File: `saved/page/pages/index.php`
 ```
